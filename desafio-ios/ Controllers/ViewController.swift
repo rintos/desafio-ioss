@@ -12,13 +12,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     var movies: [NSDictionary]?
     
-    let filmes = ["Matrix","John Wick","Wolverine","DBZ"]
-    let icons:[UIImage] = [
-    UIImage(named: "favorite_empty_icon")!,
-    UIImage(named: "favorite_full_icon")!,
-    UIImage(named: "FilterIcon")!,
-    ]
-    
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -26,11 +19,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         self.recuperaFilmes()
         collectionView.dataSource = self
         collectionView.delegate = self
-        // Do any additional setup after loading the view, typically from a nib.
     }
-    
-    
-
 
     func recuperaFilmes(){
         
@@ -63,19 +52,44 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movies?.count ?? 00
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let celula = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionID", for: indexPath) as! MovieCollectionViewCell
-        let movie = movies![indexPath.row] as! NSDictionary
+        let movie = movies![indexPath.row]
         let title = movie["title"] as! String
+        let poster = movie["poster_path"] as! String
+        
+        let defaultImageUrl = "https://image.tmdb.org/t/p/w500"
+        let movieUrl = defaultImageUrl + poster
+        
+        if let url = URL(string: movieUrl) {
+            do{
+                let data = try Data(contentsOf: url)
+                celula.movieImage.image = UIImage(data: data)
+
+            }catch let err{
+                print(" Error: \(err.localizedDescription)")
+            }
+        }
+        
+        
         celula.movieTitle.text = title
         
-        
         return celula
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let dados = movies![indexPath.row]
+        let posterPath = dados["poster_path"] as! String
+        
+        let defaultImageUrl = "https://image.tmdb.org/t/p/w500"
+        let movieUrl = defaultImageUrl + posterPath
+
+       // print(movieUrl)
+        
     }
 }
 
