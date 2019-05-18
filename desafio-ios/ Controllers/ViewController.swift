@@ -43,10 +43,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                     if let dadosRetorno = dados{
                         
                         do{
-                            let objetoJson = try JSONSerialization.jsonObject(with: dadosRetorno, options: []) as? NSDictionary
+                            let objetoJson = try JSONSerialization.jsonObject(with:  dadosRetorno, options: []) as? NSDictionary
                             
                             self.movies = objetoJson?["results"] as? [NSDictionary]
-                            print(objetoJson!)
+                            self.collectionView.reloadData()
+                            print(self.movies!)
+                            // print(objetoJson!)
                         }catch {
                             print("erro ao converter")
                         }
@@ -59,18 +61,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         
         
-        
     }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return filmes.count
+        return movies?.count ?? 00
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let celula = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionID", for: indexPath) as! MovieCollectionViewCell
-       
-        celula.movieTitle.text = filmes[indexPath.row]
+        let movie = movies![indexPath.row] as! NSDictionary
+        let title = movie["title"] as! String
+        celula.movieTitle.text = title
         
         
         return celula
