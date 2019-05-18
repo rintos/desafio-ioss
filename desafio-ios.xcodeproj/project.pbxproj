@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50B44F1A228F7DAD009F6364 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B44F19228F7DAD009F6364 /* MovieCollectionViewCell.swift */; };
 		50BC6D28228B9C76003E2B5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BC6D27228B9C76003E2B5E /* AppDelegate.swift */; };
 		50BC6D2A228B9C76003E2B5E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BC6D29228B9C76003E2B5E /* ViewController.swift */; };
 		50BC6D2D228B9C76003E2B5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50BC6D2B228B9C76003E2B5E /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50B44F19228F7DAD009F6364 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		50BC6D24228B9C76003E2B5E /* desafio-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "desafio-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50BC6D27228B9C76003E2B5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50BC6D29228B9C76003E2B5E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +37,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50B44F16228CD281009F6364 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				50BC6D2B228B9C76003E2B5E /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		50B44F17228CD2BF009F6364 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		50B44F18228CD2CB009F6364 /*  Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				50BC6D29228B9C76003E2B5E /* ViewController.swift */,
+				50B44F19228F7DAD009F6364 /* MovieCollectionViewCell.swift */,
+			);
+			path = " Controllers";
+			sourceTree = "<group>";
+		};
 		50BC6D1B228B9C75003E2B5E = {
 			isa = PBXGroup;
 			children = (
@@ -54,9 +80,10 @@
 		50BC6D26228B9C76003E2B5E /* desafio-ios */ = {
 			isa = PBXGroup;
 			children = (
+				50B44F18228CD2CB009F6364 /*  Controllers */,
+				50B44F17228CD2BF009F6364 /* Models */,
+				50B44F16228CD281009F6364 /* Views */,
 				50BC6D27228B9C76003E2B5E /* AppDelegate.swift */,
-				50BC6D29228B9C76003E2B5E /* ViewController.swift */,
-				50BC6D2B228B9C76003E2B5E /* Main.storyboard */,
 				50BC6D2E228B9C8A003E2B5E /* Assets.xcassets */,
 				50BC6D30228B9C8A003E2B5E /* LaunchScreen.storyboard */,
 				50BC6D33228B9C8A003E2B5E /* Info.plist */,
@@ -135,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50B44F1A228F7DAD009F6364 /* MovieCollectionViewCell.swift in Sources */,
 				50BC6D2A228B9C76003E2B5E /* ViewController.swift in Sources */,
 				50BC6D28228B9C76003E2B5E /* AppDelegate.swift in Sources */,
 			);
