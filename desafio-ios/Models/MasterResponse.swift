@@ -10,7 +10,6 @@ public class MasterResponse: Decodable {
 
 }
 
-
 public class Results: Decodable {
     public var vote_count : Int?
     public var id : Int?
