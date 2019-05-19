@@ -42,9 +42,22 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            
+            self.collectionView.deselectItem(at: indexPath, animated: true)
             let dados = myMovies?.results?[indexPath.row].original_title
             print(dados!)
+            
+            //let movie:MasterResponse?
+            if let viewDestiny = self.storyboard?.instantiateViewController(withIdentifier: "DetalhesMovieViewController") as? DetalhesMovieViewController {
+                
+                viewDestiny.titulo = (myMovies?.results?[indexPath.row].original_title)!
+                viewDestiny.ano = myMovies?.results?[indexPath.row].release_date
+               // viewDestiny.genero = myMovies?.results?[indexPath.row].genre_ids
+                viewDestiny.descricao = myMovies?.results?[indexPath.row].overview
+                
+                self.navigationController!.pushViewController(viewDestiny, animated: true)
 
+            }
     
         }
     
@@ -53,8 +66,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             do {
                 let myMovies = try JSONDecoder().decode(MasterResponse.self, from: response.data!)
                 self.myMovies = myMovies
+               // print(response)
                 self.collectionView.reloadData()
-                print(self.myMovies!)
             }catch let erro {
                 print(erro.localizedDescription)
             }

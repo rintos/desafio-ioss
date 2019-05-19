@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50B3C24C22909846007921A5 /* DetalhesMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B3C24B22909846007921A5 /* DetalhesMovieViewController.swift */; };
 		50B44F1A228F7DAD009F6364 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B44F19228F7DAD009F6364 /* MovieCollectionViewCell.swift */; };
 		50B44F1C22908394009F6364 /* MasterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B44F1B22908393009F6364 /* MasterResponse.swift */; };
 		50BC6D28228B9C76003E2B5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BC6D27228B9C76003E2B5E /* AppDelegate.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		1B8E4C304A7EF5195B8B6C48 /* Pods_desafio_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_desafio_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D1211C22B3C57E50A3ABF48 /* Pods-desafio-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio-ios.debug.xcconfig"; path = "Target Support Files/Pods-desafio-ios/Pods-desafio-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		50B3C24B22909846007921A5 /* DetalhesMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesMovieViewController.swift; sourceTree = "<group>"; };
 		50B44F19228F7DAD009F6364 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		50B44F1B22908393009F6364 /* MasterResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterResponse.swift; sourceTree = "<group>"; };
 		50BC6D24228B9C76003E2B5E /* desafio-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "desafio-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +67,7 @@
 			children = (
 				50BC6D29228B9C76003E2B5E /* ViewController.swift */,
 				50B44F19228F7DAD009F6364 /* MovieCollectionViewCell.swift */,
+				50B3C24B22909846007921A5 /* DetalhesMovieViewController.swift */,
 			);
 			path = " Controllers";
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				50B44F1A228F7DAD009F6364 /* MovieCollectionViewCell.swift in Sources */,
 				50BC6D2A228B9C76003E2B5E /* ViewController.swift in Sources */,
 				50B44F1C22908394009F6364 /* MasterResponse.swift in Sources */,
+				50B3C24C22909846007921A5 /* DetalhesMovieViewController.swift in Sources */,
 				50BC6D28228B9C76003E2B5E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
