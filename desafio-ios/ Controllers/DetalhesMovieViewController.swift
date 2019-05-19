@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class DetalhesMovieViewController: UIViewController {
 
@@ -18,6 +19,7 @@ class DetalhesMovieViewController: UIViewController {
     
     var movieDetail: MasterResponse?
     
+    var urlImage: String?
     var titulo: String?
     var ano: String?
     var genero: Array<Int>?
@@ -30,6 +32,12 @@ class DetalhesMovieViewController: UIViewController {
         self.yearDetalheLabel.text = ano
     //    self.genreDetalheLabel.text = genero
         self.overviewDetalheTextView.text = descricao
+        if let image = urlImage {
+            let dado = image
+            print(dado)
+            self.imageMovieDetalhe.sd_setImage(with: URL(string: dado), placeholderImage: #imageLiteral(resourceName: "favorite_empty_icon"), options: .handleCookies, context: nil)
+
+        }
         //self.titleDetalheLabel.text = movieDetail?.results?(str)
         // Do any additional setup after loading the view.
     }

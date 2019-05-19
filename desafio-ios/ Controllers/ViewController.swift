@@ -50,10 +50,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             //let movie:MasterResponse?
             if let viewDestiny = self.storyboard?.instantiateViewController(withIdentifier: "DetalhesMovieViewController") as? DetalhesMovieViewController {
                 
+                let url = myMovies?.results?[indexPath.row].poster_path
+                let link = defaultImageUrl + url!
+                
                 viewDestiny.titulo = (myMovies?.results?[indexPath.row].original_title)!
                 viewDestiny.ano = myMovies?.results?[indexPath.row].release_date
                // viewDestiny.genero = myMovies?.results?[indexPath.row].genre_ids
                 viewDestiny.descricao = myMovies?.results?[indexPath.row].overview
+                viewDestiny.urlImage = link
                 
                 self.navigationController!.pushViewController(viewDestiny, animated: true)
 
