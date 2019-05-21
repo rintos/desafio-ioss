@@ -92,7 +92,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 let myMovies = try JSONDecoder().decode(MasterResponse.self, from: response.data!)
                 self.myMovies = myMovies
                 self.currentMovies = myMovies
-                print(response)
+                //print(response)
                 self.collectionView.reloadData()
             }catch let erro {
                 print(erro.localizedDescription)
