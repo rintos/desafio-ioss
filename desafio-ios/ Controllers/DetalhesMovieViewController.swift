@@ -17,8 +17,6 @@ class DetalhesMovieViewController: UIViewController {
     @IBOutlet weak var genreDetalheLabel: UILabel!
     @IBOutlet weak var overviewDetalheTextView: UITextView!
     
-    var movieDetail: MasterResponse?
-    
     var urlImage: String?
     var titulo: String?
     var ano: String?
@@ -27,7 +25,6 @@ class DetalhesMovieViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.titleDetalheLabel.text = titulo
         self.yearDetalheLabel.text = ano
     //    self.genreDetalheLabel.text = genero
@@ -42,15 +39,8 @@ class DetalhesMovieViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func salvarFavorito(_ sender: Any) {
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
-
+    
 }

@@ -20,7 +20,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchMovies: UISearchBar!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,8 +29,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView.delegate = self
         
         collectionView.keyboardDismissMode = .onDrag
+        self.collectionView.reloadData()
         
-
+        let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        layout.minimumInteritemSpacing = 5
+        layout.itemSize = CGSize(width: (self.collectionView.frame.size.width - 20)/2, height: self.collectionView.frame.size.height/2)
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.getDadosMovies()
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        self.collectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -47,6 +58,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         return celula!
     }
+    
     
     
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -80,7 +92,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 let myMovies = try JSONDecoder().decode(MasterResponse.self, from: response.data!)
                 self.myMovies = myMovies
                 self.currentMovies = myMovies
-               // print(response)
+                print(response)
                 self.collectionView.reloadData()
             }catch let erro {
                 print(erro.localizedDescription)
@@ -92,21 +104,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     private func setUpSearchBar(){
         searchMovies.delegate = self
     }
-    
-    //Search encontrar dicas
+    //Search Movies
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        guard !searchText.isEmpty  else {
+        guard  !searchText.isEmpty  else {
             currentMovies?.results = myMovies?.results
-            collectionView.reloadData()
+             self.collectionView.reloadData()
             return
         }
-
+        
         currentMovies?.results = myMovies?.results?.filter({ (MasterResponse) -> Bool in
-            (MasterResponse.original_title?.lowercased().contains(searchText.lowercased()))!
+            ((MasterResponse.original_title?.lowercased().contains(searchText.lowercased()))!)
         })
-        collectionView.reloadData()
-    
+        self.collectionView.reloadData()
     }
-
-
+    
 }
