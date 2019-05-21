@@ -124,7 +124,7 @@
         <!--Detalhes Movie View Controller-->
         <scene sceneID="R6X-xj-xW0">
             <objects>
-                <viewController storyboardIdentifier="DetalhesMovieViewController" id="iih-m6-V9I" customClass="DetalhesMovieViewController" customModule="desafio_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetalhesMovieViewController" hidesBottomBarWhenPushed="YES" id="iih-m6-V9I" customClass="DetalhesMovieViewController" customModule="desafio_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yCf-Fu-8ls">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
