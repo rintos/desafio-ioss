@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		50B3C24C22909846007921A5 /* DetalhesMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B3C24B22909846007921A5 /* DetalhesMovieViewController.swift */; };
 		50B3C24E22937672007921A5 /* FavoritosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B3C24D22937672007921A5 /* FavoritosTableViewController.swift */; };
+		50B3C2542294D260007921A5 /* MasterResponseGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B3C2532294D25F007921A5 /* MasterResponseGenre.swift */; };
+		50B3C25722975573007921A5 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 50B3C25522975573007921A5 /* Model.xcdatamodeld */; };
 		50B44F1A228F7DAD009F6364 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B44F19228F7DAD009F6364 /* MovieCollectionViewCell.swift */; };
 		50B44F1C22908394009F6364 /* MasterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B44F1B22908393009F6364 /* MasterResponse.swift */; };
 		50BC6D28228B9C76003E2B5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BC6D27228B9C76003E2B5E /* AppDelegate.swift */; };
@@ -24,6 +26,8 @@
 		1D1211C22B3C57E50A3ABF48 /* Pods-desafio-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio-ios.debug.xcconfig"; path = "Target Support Files/Pods-desafio-ios/Pods-desafio-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		50B3C24B22909846007921A5 /* DetalhesMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesMovieViewController.swift; sourceTree = "<group>"; };
 		50B3C24D22937672007921A5 /* FavoritosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosTableViewController.swift; sourceTree = "<group>"; };
+		50B3C2532294D25F007921A5 /* MasterResponseGenre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterResponseGenre.swift; sourceTree = "<group>"; };
+		50B3C25622975573007921A5 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		50B44F19228F7DAD009F6364 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		50B44F1B22908393009F6364 /* MasterResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterResponse.swift; sourceTree = "<group>"; };
 		50BC6D24228B9C76003E2B5E /* desafio-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "desafio-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				50B44F1B22908393009F6364 /* MasterResponse.swift */,
+				50B3C2532294D25F007921A5 /* MasterResponseGenre.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -103,6 +108,7 @@
 				50BC6D2E228B9C8A003E2B5E /* Assets.xcassets */,
 				50BC6D30228B9C8A003E2B5E /* LaunchScreen.storyboard */,
 				50BC6D33228B9C8A003E2B5E /* Info.plist */,
+				50B3C25522975573007921A5 /* Model.xcdatamodeld */,
 			);
 			path = "desafio-ios";
 			sourceTree = "<group>";
@@ -248,6 +254,8 @@
 			files = (
 				50B44F1A228F7DAD009F6364 /* MovieCollectionViewCell.swift in Sources */,
 				50BC6D2A228B9C76003E2B5E /* ViewController.swift in Sources */,
+				50B3C2542294D260007921A5 /* MasterResponseGenre.swift in Sources */,
+				50B3C25722975573007921A5 /* Model.xcdatamodeld in Sources */,
 				50B44F1C22908394009F6364 /* MasterResponse.swift in Sources */,
 				50B3C24C22909846007921A5 /* DetalhesMovieViewController.swift in Sources */,
 				50BC6D28228B9C76003E2B5E /* AppDelegate.swift in Sources */,
@@ -453,6 +461,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		50B3C25522975573007921A5 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				50B3C25622975573007921A5 /* Model.xcdatamodel */,
+			);
+			currentVersion = 50B3C25622975573007921A5 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 50BC6D1C228B9C75003E2B5E /* Project object */;
 }

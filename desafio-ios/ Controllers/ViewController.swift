@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SDWebImage
+import CoreData
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
 
@@ -65,7 +66,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             self.collectionView.deselectItem(at: indexPath, animated: true)
             let dados = currentMovies?.results?[indexPath.row].original_title
-            print(dados!)
+           // print(dados!)
             
             //let movie:MasterResponse?
             if let viewDestiny = self.storyboard?.instantiateViewController(withIdentifier: "DetalhesMovieViewController") as? DetalhesMovieViewController {
@@ -75,7 +76,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 
                 viewDestiny.titulo = (currentMovies?.results?[indexPath.row].original_title)!
                 viewDestiny.ano = currentMovies?.results?[indexPath.row].release_date
-               // viewDestiny.genero = myMovies?.results?[indexPath.row].genre_ids
+                viewDestiny.genero = myMovies?.results?[indexPath.row].genre_ids
                 viewDestiny.descricao = currentMovies?.results?[indexPath.row].overview
                 viewDestiny.urlImage = link
                 
@@ -92,7 +93,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 let myMovies = try JSONDecoder().decode(MasterResponse.self, from: response.data!)
                 self.myMovies = myMovies
                 self.currentMovies = myMovies
-                //print(response)
+                print(self.currentMovies)
                 self.collectionView.reloadData()
             }catch let erro {
                 print(erro.localizedDescription)
