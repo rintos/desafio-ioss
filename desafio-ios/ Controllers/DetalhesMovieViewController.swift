@@ -26,50 +26,39 @@ class DetalhesMovieViewController: UIViewController {
     var detalhesGenero: String?
     var descricao: String?
     var genres: MasterResponseGenre? //recupera id e nome do genero
+    var reultadoGenero: String = ""
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.titleDetalheLabel.text = titulo
         self.yearDetalheLabel.text = ano
-        self.genreDetalheLabel.text = "teste"
         self.overviewDetalheTextView.text = descricao
+       // self.genreDetalheLabel.text = "O genero eh: \(reultadoGenero)"
+
+        
+        self.recuperarGenero()
+        
         if let image = urlImage {
             let dado = image
-            print(dado)
+            //print(dado)
             self.imageMovieDetalhe.sd_setImage(with: URL(string: dado), placeholderImage: #imageLiteral(resourceName: "favorite_empty_icon"), options: .handleCookies, context: nil)
 
         }
-        self.recuperarGenero()
-       // print(genero) Array Int? de genero
-        self.getCompare()
+        
         
     }
     
-    func getCompare(){
-        
-        
-    
-//        for gen in genero! {
-//            var generoID:Int? = gen
-//
-//            if genero?.contains(generoID ?? 0) ?? false {
-//                print("tem o 80")
-//            } else {
-//                print("nao tem um dos estilos do john wick")
-//            }
-//           // print(generoID as Any)
-//
-//        }
-        
-    }
     
     func recuperarGenero(){
+        
         Alamofire.request(URL(string: "https://api.themoviedb.org/3/genre/movie/list?api_key=4b299949fc90bb34aebaf5ba4dc28389&language=en-US") ?? "").responseJSON { (response) in
             do {
                // print(response)
                 let genres = try JSONDecoder().decode(MasterResponseGenre.self, from: response.data!)
                 self.genres = genres
-                print( self.genres as Any)
+               // print( self.genres as Any)
                 
                // let totalGenero = genres.genres?.count
                 
@@ -80,21 +69,28 @@ class DetalhesMovieViewController: UIViewController {
                             let generoID:Int? = detalheDenero
                             if generoID == idGenero {
                                 if let resultado = gen.name{
-                                    self.detalhesGenero = resultado
-                                    print(self.detalhesGenero as Any)
+                                    let result = resultado
+                                    self.reultadoGenero += "\(result), "
 
                                 }
                             }
-                            
                         }
-                   
+
                 }
+              //  print(self.reultadoGenero)
                 
             }catch let erro {
                 print(erro.localizedDescription)
             }
             
-        }    }
+            // atribuido resultado para campo genero da UILabel
+            self.genreDetalheLabel.text = self.reultadoGenero
+
+        }
+        
+
+    }
+    
     
     @IBAction func salvarFavorito(_ sender: Any) {
 
